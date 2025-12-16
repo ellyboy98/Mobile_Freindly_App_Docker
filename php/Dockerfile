@@ -27,6 +27,7 @@ COPY . /var/www/html
 
 # Set permissions for Laravel
 RUN chown -R www-data:www-data /var/www/html \
+    && mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache \
     && chmod -R 775 /var/www/html/storage \
     && chmod -R 775 /var/www/html/bootstrap/cache
 
@@ -41,3 +42,4 @@ RUN npm install && \
 # Expose ports
 EXPOSE 80
 EXPOSE 5173
+
